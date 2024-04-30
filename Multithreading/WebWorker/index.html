@@ -50,6 +50,8 @@
       // Listen for messages from the WebWorker
       worker.onmessage = (event) => {
         document.getElementById('result').innerHTML = event.data;
+        // Terminate the WebWorker after calculation is complete
+        worker.terminate();
       };
     }
   </script>
